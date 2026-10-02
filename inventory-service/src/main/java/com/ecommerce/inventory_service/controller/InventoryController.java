@@ -17,7 +17,7 @@ import java.util.List;
 public class InventoryController {
     private final InventoryService inventoryService;
 
-    @GetMapping
+    @GetMapping("/{sku}")
     @ResponseStatus(HttpStatus.OK)
     public boolean isInStock(@PathVariable("sku") String sku,@RequestParam("quantity") Integer quantity) {
         return inventoryService.isInStock(sku, quantity);
